@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henrygentry.wx.dao.mapper.QrcodeRecordMapper">
+    <resultMap id="recordMap" type="QrcodeRecordDO">
+        <id column="object_id" property="objectId"/>
+        <result column="media_id" property="mediaId"/>
+    </resultMap>
+
+    <insert id="insertRecord" parameterType="QrcodeRecordDO">
+        insert into t_wxpf_qcode
+        (
+          object_id , media_id
+        )
+        values
+        (
+          #{obejctId} , #{mediaId}
+        )
+    </insert>
+
+</mapper>

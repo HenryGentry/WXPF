@@ -1,0 +1,36 @@
+profiles: dev
+logging:
+  config: classpath:log4j2-dev.xml
+spring:
+  redis:
+    host: 192.168.0.11
+    port: 26379
+    password: null
+    pool:
+      max-idle: 300
+      min-idle: 10
+      max-active: 600
+      max-wait: 1000
+    timeout: 0
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/wxpf?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+  mvc:
+    throw-exception-if-no-handler-found: true
+server:
+  port: 28888
+  context-path: /wxpf
+wechat:
+  token: 
+  encodingKey: 
+  appID: 
+  appSecret: 
